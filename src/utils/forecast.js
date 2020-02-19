@@ -10,7 +10,8 @@ const forecast = (latitude, longitude, callback) => {
         }else if(body.error){
              callback(body.error, undefined);
         }else{
-            callback(undefined, body.daily.data[0].summary+ `its ${body.currently.temperature} degrees outside`);
+            callback(undefined, body.daily.data[0].summary+ ` Its ${body.currently.temperature} degrees outside.
+             The maximum temperature for the day will be ${body.daily.data[0].temperatureHigh} and the minimum temperature for the day will be ${body.daily.data[0].temperatureLow}`);
         }
     }); 
 }
